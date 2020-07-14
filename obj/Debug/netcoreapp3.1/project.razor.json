@@ -20531,6 +20531,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\Equipe\\Index.cshtml",
+      "TargetPath": "Views\\Equipe\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -20548,6 +20553,11 @@
     {
       "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\Noticia\\Index.cshtml",
+      "TargetPath": "Views\\Noticia\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

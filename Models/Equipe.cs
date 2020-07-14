@@ -15,16 +15,29 @@ namespace Eplayers.Models
         public Equipe(){
             CreateFolderAndFile(PATH);
         }
+        /// <summary>
+        /// Cria/Cadastra uma equipe
+        /// </summary>
+        /// <param name="e">Equipe</param>
         public void Create(Equipe e)
         {
             string[] linha = {PrepararLinha(e)};
             File.AppendAllLines(PATH,linha);
         }
 
+        /// <summary>
+        /// Prepara a impressão
+        /// </summary>
+        /// <param name="e">Equipe</param>
+        /// <returns>A Linha separada</returns>
         private string PrepararLinha(Equipe e){
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}  ";
         }
 
+        /// <summary>
+        /// Exclui uma equipe
+        /// </summary>
+        /// <param name="IdEquipe">Equipe que será excluida</param>
         public void Delete(int IdEquipe)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -32,6 +45,10 @@ namespace Eplayers.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// Lê todas as linhas do CSV
+        /// </summary>
+        /// <returns>As linhas separadas</returns>
         public List<Equipe> ReadAll()
         {
             List<Equipe> equipes = new List<Equipe>();
@@ -48,7 +65,10 @@ namespace Eplayers.Models
             }
             return equipes;
         }
-
+        /// <summary>
+        /// Altera ou atualiza a Equipe
+        /// </summary>
+        /// <param name="e">Equipe</param>
         public void Update(Equipe e)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
