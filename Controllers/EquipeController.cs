@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Eplayers.Models;
 using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Eplayers.Controllers
 {
@@ -13,9 +14,9 @@ namespace Eplayers.Controllers
     {
         Equipe equipeModel = new Equipe();
         /// <summary>
-        /// 
+        /// Aponta para a index da minha view
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A própria View</returns>
         public IActionResult Index()
         {
             ViewBag.Equipes = equipeModel.ReadAll();
@@ -31,12 +32,43 @@ namespace Eplayers.Controllers
             Equipe equipe   = new Equipe();
             equipe.IdEquipe = Int32.Parse(form["IdEquipe"]); 
             equipe.Nome     = form["Nome"];
-            equipe.Imagem   = form["Imagem"];
+            // Upload da Imagem
+            var file    = form.Files[0];
+
+            // PastaA, PastaB, PastaC, Arquivo.pdf
+            // PastaA/PastaB/Pastac/Arquivo.pdf
+            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+
+            if(file != null)
+            {
+                if(!Directory.Exists(folder)){
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))  
+                {  
+                    file.CopyTo(stream);  
+                }
+                equipe.Imagem   = file.FileName;
+            }
+            else
+            {
+                equipe.Imagem   = "padrao.png";
+            }
+            // Fim - Upload da Imagem
 
             equipeModel.Create(equipe);
 
-            ViewBag.Equipes = equipeModel.ReadAll();
             return LocalRedirect("~/Equipe"); 
         }
+
+        [Route("[controller]/{id}")]
+
+        public IActionResult Excluir(int id){
+            equipeModel.Delete(id);
+            return LocalRedirect("~/Equipe");
+        }
+
     }
 }

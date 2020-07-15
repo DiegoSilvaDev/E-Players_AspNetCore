@@ -20521,6 +20521,11 @@
   "RootNamespace": "Eplayers",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\Noticias\\Index.cshtml",
+      "TargetPath": "Views\\Noticias\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -20553,11 +20558,6 @@
     {
       "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Diego\\OneDrive\\Área de Trabalho\\Ux\\SENAI\\AspNetCore\\Eplayers\\Views\\Noticia\\Index.cshtml",
-      "TargetPath": "Views\\Noticia\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
