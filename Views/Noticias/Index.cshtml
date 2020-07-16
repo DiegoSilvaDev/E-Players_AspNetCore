@@ -3,25 +3,35 @@
     ViewData["Title"] = "Noticias";
 }
 
+<div class="titulo_pagina">
+    <h1>cadastro de @ViewData["Title"]</h1>
+</div>
+<form class="cadastro" action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
 
-<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+    <div class="campo">
+        <label for="IdNoticia">IdNoticia</label>
+        <input type="text" name="IdNoticia" id="IdNoticia">
+    </div>
 
-    <label for="IdNoticia">IdNoticia</label>
-    <input type="text" name="IdNoticia" id="IdNoticia">
-    
-    <label for="Titulo">Titulo</label>
-    <input type="text" name="Titulo" id="Titulo">
-    
-    <label for="Texto">Texto</label>
-    <input type="text" name="Texto" id="Texto">
+    <div class="campo">     
+        <label for="Titulo">Titulo</label>
+        <input type="text" name="Titulo" id="Titulo">
+    </div>    
+   
+    <div class="campo">      
+        <label for="Texto">Texto</label>
+        <input type="text" name="Texto" id="Texto">
+    </div>
 
-    <label for="Imagem">Imagem</label>
-    <input type="file" name="Imagem" id="Imagem">   
+    <div class="campo">       
+        <label for="Imagem">Imagem</label>
+        <input type="file" name="Imagem" id="Imagem">   
+    </div>
 
-    <button type="submit">Cadastrar</button>
+    <button class="gradient btn" type="submit">Cadastrar</button>
 
 </form>
-<table class="table table-responsive table-striped">
+<table>
     <thead>
         <th>Id</th>
         <th>Titulo</th>
@@ -40,7 +50,9 @@
                     <img src="img/Noticias/@n.Imagem" alt="Imagem da Notícia @n.Titulo">
                 </td>
                 <td>
-                    <a asp-controller="Noticias" asp-action="Excluir" asp-route-id="@n.IdNoticia">Excluir</a>
+                    <a asp-controller="Noticias" asp-action="Excluir" asp-route-id="@n.IdNoticia">
+                        <i class="fa fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         }
